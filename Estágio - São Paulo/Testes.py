@@ -11,8 +11,8 @@ def teste1():
         soma = soma + k
 
     return (f'o valor da variavel soma é: {soma}')
-def teste2():
-    n = int(input("informe o número:")) # solicitanso ao usuário o numero há ser verificado
+def teste2(n):
+    #n = int(input("informe o número:")) # solicitanso ao usuário o numero há ser verificado
     a = int(0) # variavel inicial
     b = int(1) # variavel inicial
     aux = int(0) # variavel que ajuda a troca as variaveis
@@ -65,21 +65,26 @@ def teste4(n):
     for estado, valor in n.items():
         percentual = (valor/fattotal)*100
         print (f'{estado}: {percentual:.2f}%')
-    
+def teste5(l):
+    l1 = ""
+    for i in range(len(l)-1,-1,-1):
+        l1 += l[i]
+    return l1
         
 def main ():
+    l = ('a','b','c','d')
     dados = {
     'SP': 67836.43,
     'RJ': 36678.66,
     'MG': 29229.88,
     'ES': 27165.48,
     'Outros': 19849.53}
-    #faturamento = ('Testes-e-vagas/Estágio - São Paulo/faturamento.json')
-    #print(f'1° teste {teste1()}')
-    #print(f'2° teste {teste2()}')
-    #print(f'3° teste {teste3()}')
-    #print(f'4° teste {teste4(dados)}')
-    print(f'5° teste {teste5()}')
+   
+    print(f'1° teste: {teste1()}')
+    print(f'2° teste: {teste2(6)}')
+    print(f'3° teste: {teste3()}')
+    print(f'4° teste: {teste4(dados)}')
+    print(f'5° teste: {teste5(l)}')
 
 
     return 0
