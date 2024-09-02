@@ -25,10 +25,12 @@ def teste2():
             a = b
             b = aux + b # acrescentando o proximo numero da sequencia
     return (f'o numero {n} não pertence a sequencia fibonacci') # se o loop terminar sem encontrar o numero é porque ele não pertence a sequencia    
-def teste3(faturameto):
+def teste3():
+
+
     # vamos abrir o arquivo 
-    with open (faturameto, 'r') as f:
-        dados = json.laod(f)
+    with open ('Estágio - São Paulo\\arquivo.json','r') as f:
+        dados = json.load(f)
 
 
     fat = [] #criando a lista de faturamento 
@@ -55,22 +57,29 @@ def teste3(faturameto):
 
     print (f'Menor valor de faturameto: R${menorv:.2f}')
     print (f'Maior valor de faturameto: R${maiorv:.2f}')
-    print (f'Numero de dias com faturameto acima da media: R${Dacima_media:.2f}')
-
-
+    print (f'Numero de dias com faturameto acima da media: {Dacima_media:}')
 def teste4(n):
-    for estado, valor in dados.items():
-        percentual = (valor/totalv)*100
+
+    fattotal = sum(n.values())
+    #calculando o percentual por estado
+    for estado, valor in n.items():
+        percentual = (valor/fattotal)*100
         print (f'{estado}: {percentual:.2f}%')
+    
         
 def main ():
-    
-
+    dados = {
+    'SP': 67836.43,
+    'RJ': 36678.66,
+    'MG': 29229.88,
+    'ES': 27165.48,
+    'Outros': 19849.53}
+    #faturamento = ('Testes-e-vagas/Estágio - São Paulo/faturamento.json')
     #print(f'1° teste {teste1()}')
     #print(f'2° teste {teste2()}')
-    print(f'3° teste {teste3(faturamento.json)}')
-    #print(f'4° teste {teste4()}')
-    #print(f'5° teste {teste5()}')
+    #print(f'3° teste {teste3()}')
+    #print(f'4° teste {teste4(dados)}')
+    print(f'5° teste {teste5()}')
 
 
     return 0
