@@ -25,9 +25,9 @@ def teste2():
             a = b
             b = aux + b # acrescentando o proximo numero da sequencia
     return (f'o numero {n} não pertence a sequencia fibonacci') # se o loop terminar sem encontrar o numero é porque ele não pertence a sequencia    
-def teste3(arquivo_json):
+def teste3(faturameto):
     # vamos abrir o arquivo 
-    with open (arquivo_json, r) as f:
+    with open (faturameto, 'r') as f:
         dados = json.laod(f)
 
 
@@ -43,27 +43,35 @@ def teste3(arquivo_json):
     media = totalv/dias # utilizando o valor total e a quantidade de dias para obter a media de faturamento.
 
 
+
+
+
+    
     Dacima_media = 0 # variavel para contar quantos dias acima da media tivemos
 
     for valor in fat:
         if valor > media:
             Dacima_media = Dacima_media + 1
 
+    print (f'Menor valor de faturameto: R${menorv:.2f}')
+    print (f'Maior valor de faturameto: R${maiorv:.2f}')
+    print (f'Numero de dias com faturameto acima da media: R${Dacima_media:.2f}')
+
+
+def teste4(n):
     for estado, valor in dados.items():
         percentual = (valor/totalv)*100
         print (f'{estado}: {percentual:.2f}%')
         
-    
-
-
-
-
 def main ():
-    import json
+    
 
     #print(f'1° teste {teste1()}')
     #print(f'2° teste {teste2()}')
-    print(f'3° teste {teste3()}')
+    print(f'3° teste {teste3(faturamento.json)}')
+    #print(f'4° teste {teste4()}')
+    #print(f'5° teste {teste5()}')
+
 
     return 0
 
